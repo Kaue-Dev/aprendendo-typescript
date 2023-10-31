@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    //"watch": true // A cada mudança ele compila automaticamente
+  }
+}
