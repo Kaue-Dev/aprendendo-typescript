@@ -19,4 +19,16 @@ function createSpaceship(nome: string, piloto: string, tripulacaoMax: number, tr
   return spaceship
 }
 
-createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission)
+const newSpaceship = createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission)
+
+function adicionarTripulante (nome: string) {
+  if (newSpaceship.tripulacao.length === newSpaceship.tripulacaoMax) {
+    alert("Limite máximo da tripulção atingido.")
+  } else {
+    newSpaceship.tripulacao.push(nome)
+  }
+}
+
+adicionarTripulante("Andre")
+
+console.log({spaceships});

@@ -15,4 +15,14 @@ function createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission) {
     spaceships.push(spaceship);
     return spaceship;
 }
-createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission);
+var newSpaceship = createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission);
+function adicionarTripulante(nome) {
+    if (newSpaceship.tripulacao.length === newSpaceship.tripulacaoMax) {
+        alert("Limite máximo da tripulção atingido.");
+    }
+    else {
+        newSpaceship.tripulacao.push(nome);
+    }
+}
+adicionarTripulante("Andre");
+console.log({ spaceships: spaceships });
