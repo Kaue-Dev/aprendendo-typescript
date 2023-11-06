@@ -1,12 +1,16 @@
 const spaceships = []
 
-const nome: string = prompt("Digite o nome da nave")
-const piloto: string = prompt("Digite o nome do piloto")
-const tripulacaoMax: number = parseInt(prompt("Digite o número máximo da tripulção"))
-const tripulacao: string[] = []
-const inMission: boolean = false
 
-function createSpaceship(nome: string, piloto: string, tripulacaoMax: number, tripulacao: string[], inMission: boolean) {
+
+function createSpaceship() {
+  alert(`Inciando criação da ${spaceships.length + 1}° nave.`)
+
+  const nome: string = prompt("Digite o nome da nave")
+  const piloto: string = prompt("Digite o nome do piloto")
+  const tripulacaoMax: number = parseInt(prompt("Digite o número máximo da tripulção"))
+  const tripulacao: string[] = []
+  const inMission: boolean = false
+  
   const spaceship = {
     nome: nome,
     piloto: piloto,
@@ -31,16 +35,26 @@ function enviarEmMissao (spaceship: { nome: string, tripulacaoMax: number, tripu
   const umTerco = Math.floor(spaceship.tripulacaoMax / 3)
   
   if (spaceship.tripulacao.length >= umTerco) {
-    alert(`Enviando a ${spaceship.nome} para uma missão.`)
+    alert(`Enviando a nave "${spaceship.nome}" para uma missão.`)
     spaceship.inMission = true
   } else {
     alert("A tripulação precisa ser de no minimo 1/3 da capacidade total.")
   }
 }
 
-const newSpaceship = createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission)
-adicionarTripulante("John", newSpaceship)
-adicionarTripulante("Kelly", newSpaceship)
-adicionarTripulante("Richard", newSpaceship)
-enviarEmMissao(newSpaceship)
-console.log(spaceships[0]);
+function listarNaves() {
+  alert("Exibindo array de naves no console")
+  console.log(spaceships);
+}
+
+const primeiraNave = createSpaceship()
+const segundaNave = createSpaceship()
+
+adicionarTripulante("John", primeiraNave)
+adicionarTripulante("Kelly", primeiraNave)
+enviarEmMissao(primeiraNave)
+
+adicionarTripulante("Richard", segundaNave)
+adicionarTripulante("Math", segundaNave)
+
+listarNaves()
