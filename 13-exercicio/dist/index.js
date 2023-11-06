@@ -16,13 +16,25 @@ function createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission) {
     return spaceship;
 }
 var newSpaceship = createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission);
-function adicionarTripulante(nome) {
-    if (newSpaceship.tripulacao.length === newSpaceship.tripulacaoMax) {
+function adicionarTripulante(nome, spaceship) {
+    if (spaceship.tripulacao.length === spaceship.tripulacaoMax) {
         alert("Limite máximo da tripulção atingido.");
     }
     else {
-        newSpaceship.tripulacao.push(nome);
+        spaceship.tripulacao.push(nome);
     }
 }
-adicionarTripulante("Andre");
-console.log({ spaceships: spaceships });
+adicionarTripulante("Andre", newSpaceship);
+function enviarEmMissao(spaceship) {
+    var umTerco = Math.floor(spaceship.tripulacaoMax / 3);
+    if (spaceship.tripulacao.length >= umTerco) {
+        alert("Enviando a ".concat(spaceship.nome, " para uma miss\u00E3o."));
+        spaceship.inMission = true;
+    }
+    else {
+        alert("A tripulação precisa ser de no minimo 1/3 da capacidade total.");
+    }
+}
+console.log(spaceships[0]);
+enviarEmMissao(newSpaceship);
+console.log(spaceships[0]);
