@@ -1,7 +1,5 @@
 const spaceships = []
 
-
-
 function createSpaceship() {
   alert(`Inciando criação da ${spaceships.length + 1}° nave.`)
 
