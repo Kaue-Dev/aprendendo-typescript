@@ -15,7 +15,6 @@ function createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission) {
     spaceships.push(spaceship);
     return spaceship;
 }
-var newSpaceship = createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission);
 function adicionarTripulante(nome, spaceship) {
     if (spaceship.tripulacao.length === spaceship.tripulacaoMax) {
         alert("Limite máximo da tripulção atingido.");
@@ -24,7 +23,6 @@ function adicionarTripulante(nome, spaceship) {
         spaceship.tripulacao.push(nome);
     }
 }
-adicionarTripulante("Andre", newSpaceship);
 function enviarEmMissao(spaceship) {
     var umTerco = Math.floor(spaceship.tripulacaoMax / 3);
     if (spaceship.tripulacao.length >= umTerco) {
@@ -35,6 +33,9 @@ function enviarEmMissao(spaceship) {
         alert("A tripulação precisa ser de no minimo 1/3 da capacidade total.");
     }
 }
-console.log(spaceships[0]);
+var newSpaceship = createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission);
+adicionarTripulante("John", newSpaceship);
+adicionarTripulante("Kelly", newSpaceship);
+adicionarTripulante("Richard", newSpaceship);
 enviarEmMissao(newSpaceship);
 console.log(spaceships[0]);

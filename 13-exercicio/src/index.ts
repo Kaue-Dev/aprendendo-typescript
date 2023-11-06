@@ -19,8 +19,6 @@ function createSpaceship(nome: string, piloto: string, tripulacaoMax: number, tr
   return spaceship
 }
 
-const newSpaceship = createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission)
-
 function adicionarTripulante (nome: string, spaceship: { tripulacaoMax: number, tripulacao: string[] }) {
   if (spaceship.tripulacao.length === spaceship.tripulacaoMax) {
     alert("Limite máximo da tripulção atingido.")
@@ -28,8 +26,6 @@ function adicionarTripulante (nome: string, spaceship: { tripulacaoMax: number, 
     spaceship.tripulacao.push(nome)
   }
 }
-
-adicionarTripulante("Andre", newSpaceship)
 
 function enviarEmMissao (spaceship: { nome: string, tripulacaoMax: number, tripulacao: string[], inMission: boolean}) {
   const umTerco = Math.floor(spaceship.tripulacaoMax / 3)
@@ -42,6 +38,9 @@ function enviarEmMissao (spaceship: { nome: string, tripulacaoMax: number, tripu
   }
 }
 
-console.log(spaceships[0]);
+const newSpaceship = createSpaceship(nome, piloto, tripulacaoMax, tripulacao, inMission)
+adicionarTripulante("John", newSpaceship)
+adicionarTripulante("Kelly", newSpaceship)
+adicionarTripulante("Richard", newSpaceship)
 enviarEmMissao(newSpaceship)
 console.log(spaceships[0]);
